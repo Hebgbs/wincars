@@ -95,5 +95,44 @@ SET des_cc=%gamedir%\cars
 ```
 There is no reason to tinker with this, if conforming to the conventional file structure present for other vehicles.
 
+### Making it good
+To make your project not suck when used as a clockwork car, you ought to do the following;
+
+#### Blender
+**Get Blender.** After getting Blender, visit https://re-volt.github.io/re-volt-addon/html/index.html and get the Blender addon, installing in in your Blender scripts.
+
+Once opened, do the following:
+
+1. Press A twice, then Delete. (Confirm deleting everything in default scene).
+2. At the top pane in Info, select File > Import > Re-Volt
+3. Open the `.prm` file which represents the car's body in the game's `cars` directory
+4. In the right pane of the default Blender layout, change Properties to UV/Image editor
+5. At the bottom toolbar in UV/Image editor, open the image list and select the car's texture
+   * You may want to select Image > Open image instead if the dummy file loaded with no other option instead.
+5. In 3D View, Right-click on the imported `.prm` file and change on the bottom toolbar for 3D View from Object Mode to Edit Mode
+6. Press A to select all vertex points (and thus, highlight all faces).
+7. In UV/Image Editor, press A to select all UV points.
+8. At the bottom toolbar of UV/Image Editor select UVs > Export UV Layout
+   * Note that UVs doesn''t show up if 3D View is set to Object Mode.
+9. Save as whatever you like. Begin file name with a period to not submit it in a pull request later.
+
+#### GNU Image Manipulation Program
+**Get GIMP.** After getting GIMP there is nothing else special you have to do except open it.
+
+Do as follows for best results:
+
+1. Open the car texture from your project directory.
+2. Open again, _except_ this time drag your UV map from Blender into the layers tab.
+3. Use the Fuzzy Select tool to select all _outside_ the UV map.
+   * Touch up if you have to; By default for select tools `[Ctrl]` is remove from selection, while `[Shift]` is add to selection.
+4. At the top toolbar or from context menu, go to Select > Invert
+   * Optionally, after inverting selection go to Select > Grow and expand by 1px.
+   * Touch up afterward if you have to,
+5. Use any variety of means to de-saturate the selection.
+   * In 2.10, you can go to Colour > Components > Mono Mixer for a solid means of manipulating de-saturation per colour channel.
+6. _Export as_ a `.bmp` file, named after the original in the game's `cars` directory.
+   * Optionally, export a "q" bitmap for renaming as a `.bmq` file after.
+      * You will need to make Windows Explorer not hide known file extensions before attempting this. Google it.
+
 # BTW
 Have fun, and don't be afraid to dick around. It's how I got this stuff to happen, and you can too! The primary difference is I got all the hard stuff done.
