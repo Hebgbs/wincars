@@ -29,8 +29,7 @@ notepad.exe gamepath.bat
 EXIT
 :chk_car
 IF NOT EXIST %des_cc%\%car_cc%\%par_cc% (
-  ECHO,
-  ECHO %des_cc%\%car_cc%
+  ECHO.
   ECHO Oh dear, it seems like you don't have %car_cc%.
   ECHO If you would like to download it, press any key to continue.
   ECHO.
@@ -40,7 +39,7 @@ IF NOT EXIST %des_cc%\%car_cc%\%par_cc% (
   CLS
   ECHO Extract the \cars archive to your game's cars directory and press
   ECHO any key to validate you have %car_cc% and proceed with further operations.
-  START %rvz_url%
+  START http://revoltzone.net/sitescripts/dload.php?id=%rvl_id%
   PAUSE > NUL
   ECHO.
   ECHO Once finished, press any key to re-check if you have this vehicle installed.

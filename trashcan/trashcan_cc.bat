@@ -36,10 +36,10 @@ ECHO use with other vehicles should you view its contents for modification.
 ECHO.
 ECHO To continue, press any key.
 PAUSE > NUL
-REM | -------------------------------------------
-REM | Don't touch this. It is for link behaviour.
+REM | --------------------------------------------
+REM | Don't touch this. It is for batch behaviour.
 REM | This is handled by separate files.
-REM | -------------------------------------------
+REM | --------------------------------------------
 CD %~dp0\..
 COPY NUL > .running
 CALL gamepath.bat
@@ -47,7 +47,7 @@ SET src_cc=%~dp0
 SET des_cc=%gamedir%\cars
 IF EXIST %des_ln%\%car_cc% GOTO ln_bhv
 IF NOT EXIST %des_ln%\%car_cc% (
-SET rvz_url=http://revoltzone.net/sitescripts/dload.php?id=2950
+SET rvz_id=8185
 CALL filechk.bat
 )
 :ln_bhv
