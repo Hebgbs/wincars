@@ -22,6 +22,8 @@ SET wrd_cc=
 SET wrp_cc=
 REM | Car spinner
 SET spn_cc=
+REM | Re-Volt Zone item number
+SET rvz_id=2950
 
 ECHO Requesting for administrative privileges...
 cd /d "%~dp0" && (if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs") && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit )
@@ -45,7 +47,6 @@ SET src_cc=%~dp0
 SET des_cc=%gamedir%\cars
 IF EXIST %des_ln%\%car_cc% GOTO ln_bhv
 IF NOT EXIST %des_ln%\%car_cc% (
-SET rvz_id=2950
 CALL filechk.bat
 )
 :ln_bhv
