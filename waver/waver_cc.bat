@@ -1,7 +1,4 @@
 @ECHO OFF
-REM | Program files check; Only important for people who installed retail copy to default path.
-IF EXIST "%programfiles(x86)%" SET prgm="%programfiles(x86)%"
-IF NOT EXIST "%programfiles(x86)%" SET prgm="%programfiles%"
 REM | Exit behaviour; Change this to include /b if you want cmd to remain open. Useful for development.
 SET exitCmd=EXIT
 REM | !!! Hey end-user, if you touch any of this you are now a developer. Congratulations. :tada: :confetti_ball:
