@@ -14,7 +14,7 @@ REM | 32-bit Program files check; Only important for people who installed retail
 IF EXIST "%programfiles(x86)%" SET prgm="%programfiles(x86)%"
 IF NOT EXIST "%programfiles(x86)%" SET prgm="%programfiles%"
 
-SET gamedir=%prgm%\Acclaim\re-volt
+SET gamedir=%prgm%\Acclaim\revolt
 EXIT /b
 
 REM | If filechk.bat is giving you trouble about game path not being correct,
