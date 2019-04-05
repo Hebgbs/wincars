@@ -10,7 +10,7 @@ IF NOT EXIST .running (
   EXIT
 )
 
-SET gamedir=%prgm%\Acclaim\re-volt
+SET gamedir=%prgm%\Acclaim\revolt
 EXIT /b
 
 REM | If filechk.bat is giving you trouble about game path not being correct,
