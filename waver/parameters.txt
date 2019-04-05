@@ -1,0 +1,201 @@
+{
+
+; 		(hovercraft parameters, based on MOH's HoverTech)
+
+Name      	"Waver CC"
+
+;		(files)
+
+MODEL 	0 	"cars\wincar4\waver.prm"
+MODEL 	1 	"NONE"
+MODEL 	2 	"NONE"
+MODEL 	3 	"NONE"
+MODEL 	4 	"NONE"
+MODEL 	5 	"NONE"
+MODEL 	6 	"NONE"
+MODEL 	7 	"NONE"
+MODEL 	8 	"NONE"
+MODEL 	9 	"NONE"
+MODEL 	10 	"NONE"
+MODEL 	11 	"NONE"
+MODEL 	12 	"NONE"
+MODEL 	13 	"NONE"
+MODEL 	14 	"NONE"
+MODEL 	15 	"NONE"
+MODEL 	16 	"NONE"
+MODEL 	17 	"cars\misc\aerial.m"
+MODEL 	18 	"cars\misc\aerialt.m"
+TPAGE 		"cars\wincar4\skin.bmp"
+COLL 		"cars\wincar4\hull.hul"
+;)SFXENGINE  	"cars\Waver\petrol.wav"
+;)TSHADOW 	"cars\Waver\shadow.bmp"
+;)SHADOWTABLE 	-52 52 73 -80 0
+EnvRGB 		0 0 0
+
+;		(frontend)
+
+BestTime   	true
+Selectable 	true
+;)CPUSelectable	false		;insert 'true' if you're on PumaR4
+;)Statistics 	true
+Class      	2
+Obtain     	0
+Rating     	4
+TopEnd     	3549.162598
+Acc        	9.10395
+Weight     	1
+Trans      	2
+MaxRevs    	0.5
+;)TCARBOX   	"cars\wincar4\carbox.bmp"
+
+;		(handling)
+
+SteerRate  	2.3
+SteerMod   	0.4
+EngineRate 	4.5
+TopSpeed   	42
+DownForceMod	2
+CoM        	0 -15 0
+Weapon     	0 -32 64
+;)Flying   	true
+
+;		(body)
+
+BODY {
+ModelNum   	0
+Offset     	0 14 0
+Mass       	1
+Inertia    	1400 0 0
+           	0 2200 0
+           	0 0 700
+Gravity    	2200
+Hardness   	0
+Resistance 	0.001
+AngRes     	0.001
+ResMod     	25
+Grip       	0.01
+StaticFriction 	0.8
+KineticFriction 0.4
+}
+
+;		(wheels)
+
+WHEEL 0 - 3 {
+ModelNum 	-1
+IsPresent   	true
+SteerRatio  	-0.3
+EngineRatio 	6000
+Radius      	6
+Mass        	0.15
+Gravity     	2200
+MaxPos      	3
+SkidWidth   	0
+ToeIn       	0
+Grip            0.002
+StaticFriction  2.5
+KineticFriction 2.4
+}
+
+WHEEL 0 - 1 {
+IsPowered   	false
+IsTurnable  	true
+AxleFriction    0.02
+}
+
+WHEEL 2 - 3 {
+IsPowered   	true
+IsTurnable  	false
+AxleFriction    0.05
+}
+
+WHEEL 0 {
+Offset1  	-25 18 35
+Offset2  	-0.5 0 0
+}
+
+WHEEL 1 {
+Offset1  	25 18 35
+Offset2  	0.5 0 0
+}
+
+WHEEL 2 {
+Offset1  	-25 18 -35
+Offset2  	-0.5 0 0
+}
+
+WHEEL 3 {
+Offset1  	25 18 -35
+Offset2  	0.5 0 0
+}
+
+;		(springs)
+
+SPRING 0 - 3 {
+ModelNum    	-1
+Offset      	0 0 0
+Length      	0
+Stiffness   	450
+Damping     	9.2
+Restitution 	-0.95
+}
+
+;		(pins)
+
+PIN 0 - 3 {
+ModelNum    	-1
+Offset      	0 0 0
+Length      	0
+}
+
+;		(axles)
+
+AXLE 0 - 3 {
+ModelNum    	-1
+Offset      	0 0 0
+Length      	0
+}
+
+;		(spinner)
+
+SPINNER {
+ModelNum    	-1
+Offset      	0 0 0
+Axis        	0 1 0
+AngVel      	0
+}
+
+;		(antenna)
+
+AERIAL {
+SecModelNum 	17
+TopModelNum 	18
+Offset      	15 5 -35
+Direction   	0 -1 0
+Length      	27
+Stiffness   	2000
+Damping     	5.5
+}
+
+;		(ai)
+
+AI {
+UnderThresh 	150
+UnderRange  	1500
+UnderFront  	450
+UnderRear   	335
+UnderMax    	0.95
+OverThresh  	100
+OverRange   	1391
+OverMax     	1
+OverAccThresh  	10
+OverAccRange   	400
+PickupBias     	16383
+BlockBias      	16383
+OvertakeBias   	16383
+Suspension     	0
+Aggression     	0
+}
+
+}
+
+a1wave130601

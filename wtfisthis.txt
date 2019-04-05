@@ -1,0 +1,23 @@
+Huh?
+====
+This is a directory full of vehicles successfully turned into clockwork cars.
+Edit gamepath.bat to reflect your Re-Volt / RVGL location and have fun.
+It will search for either Re-Volt or RVGL, by executable name before proceeding.
+
+To apply changes, open the car you want (if you have it already) and run the batch files therein.
+If you don't have the car, you will be prompted to download via Re-Volt Zone.
+To undo changes, manually edit your game to restore the original wincar4; it's in \cars.
+
+How does this really work?
+==========================
+Each batch file will execute other files therein;
+gamepath.bat defines where the game is. If these scripts are unable to function fix them. (Do not subvert error checking.)
+filechk.bat will 1) check if revolt.exe exists, if not, 2) check for rvgl.exe and if it finds the game, 3) check for the car specific to the script executed.
+lnchoice.bat is for determining link behaviour, and produces the file .lncmd.bat.
+The scripts will seek out .lncmd.bat for knowing what to do; either symbolic links or hard links. If .lncmd.bat doesn't exist it will call upon lnchoice.bat.
+When completed, the script inside the cars directory to be affected (which ends in _cc.bat) will symbolically link all files therein so target acts as clockwork.
+Open the game, load Clockwork Carnage and enjoy thirty of any vehicle you've chosen.
+
+BTW
+===
+You'll want to download the whole archive, or install Github for desktop and sync with me for keeping up with future releases. Don't be shy to send me suggestions for cars!
