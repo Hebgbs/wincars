@@ -5,10 +5,10 @@ It will search for either Re-Volt or RVGL, by executable name before proceeding.
 
 To apply changes, open the car you want (if you have it already) and run the batch files therein.
 If you don't have the car, you will be prompted to download via Re-Volt Zone.
-To undo changes, manually edit your game to restore the original wincar4; it's in \cars.
+To undo changes, manually edit your game to restore the original wincar4; it's in `\cars`.
 
 # How does this really work?
-_Do note, this will only work on Windows Vista or greater, with NTFS partitions. If your installation of Windows is what'ss considered as "Typical" for the average end-user, then you should be good to use these scripts._
+_Do note, this will only work on Windows Vista or greater, with NTFS partitions. If your installation of Windows is what's considered as "Typical" for the average end-user, then you should be good to use these scripts._
 
 Each batch file at base level will execute other files therein;
 * `gamepath.bat` defines where the game is. If these scripts are unable to function fix them. (Do not subvert error checking.)
@@ -88,7 +88,7 @@ Don't be fussed if `.lncmd.bat` doesn't exist at the base of the repository. Thi
 
 Everything else after that _does_ matter. If you hadn't noticed there is a variable called `mln` which will use the behaviour as defined in `.lncmd.bat`. Without this file being called, these variables remain undefined and will not be applied (which means your script is broken). The lines with `mln` are pulling from your project folder. Everything else are hard links, since they reside on the same physical partition as the game and will pull from the game's `cars` directory.
 
-As for `src-cc` and `des_cc`, those variables are defined in the batch body, which will always be as shown:
+As for `src_cc` and `des_cc`, those variables are defined in the batch body, which will always be as shown:
 ```
 SET src_cc=%~dp0
 SET des_cc=%gamedir%\cars
