@@ -7,17 +7,26 @@ To apply changes, open the car you want (if you have it already) and run the bat
 If you don't have the car, you will be prompted to download via Re-Volt Zone.
 To undo changes, manually edit your game to restore the original wincar4; it's in `\cars`.
 
+### License information
+Creative Commons CC0.
+
 # How does this really work?
 _Do note, this will only work on Windows Vista or greater, with NTFS partitions. If your installation of Windows is what's considered as "Typical" for the average end-user, then you should be good to use these scripts._
 
-Each batch file at base level will execute other files therein;
-* `gamepath.bat` defines where the game is. If these scripts are unable to function fix them. (Do not subvert error checking.)
+Each configuration batch file will execute other files at repository trunk;
+* `gamepath.bat` defines where the game is. If these scripts are unable to function fix them by setting correct path for game binary. (Do not subvert error checking.)
 * `filechk.bat` will 1) check if `revolt.exe` exists, if not, 2) check for `rvgl.exe` and if it finds the game, 3) check for the car specific to the script executed.
 * `lnchoice.bat` is for determining link behaviour, and produces the file `.lncmd.bat`.
 * The scripts will seek out `.lncmd.bat` for knowing what to do; either symbolic links or hard links. If `.lncmd.bat` doesn't exist it will call upon `lnchoice.bat`.
-* When completed, the script inside the cars directory to be affected (which ends in `_cc.bat`) will symbolically link all files therein so target acts as clockwork.
+   * If you had chosen poorly, just edit `.lncmd.bat` by hand; either `mklink` or `mklink /h`.
+* When completed, the script inside the cars directory to be affected (which ends in `_cc.bat`) will link all files therein so target acts as clockwork.
 
 Open the game, select game mode Clockwork Carnage and enjoy thirty of any vehicle you've chosen.
+
+### Wait, _Clockwork Carnage?_
+If you've never completed Stunt Arena by collecting all thirty stars around the map, then you'll never had earned this reward. To unlock it without doing this tedious effort, one of two things can be done;
+* Press key combination :arrow_up::arrow_right::arrow_down::arrow_left::arrow_up::arrow_left::arrow_down::arrow_right: at main menu
+* Launch the game from desktop shortcut or in command line with `-dev`.
 
 # So how do I actually use this?
 Open the car directory you want to apply changes for and execute its batch file. _Simple._ Windows will take care of the rest; The requisite batch files will execute, the things will be done, and you can run your game with confidence knowing your changes were applied.
@@ -71,7 +80,9 @@ http://revoltzone.net/cars/8185/Trashcan
 See **8185** there? That is the vehicle's ID in Re-Volt Zone and is what's used for `rvz_id`.
 
 #### Body
-Everything between the head and the foot of the batch file is splash text and background stuff for the end-user. None of this matters for you to touch, so _don't touch it._
+Everything between the head and the foot of the batch file is splash text and background stuff for the end-user. The _only_ thing which matters is the splash text. Make it good, and optionally, let people know where original assets not under your copyright come from.
+
+Everything in this repository is CC0. **No negotiation.**
 
 #### Foot
 Where the rubber meet the road. Using the variables from the head of the document, apply them here. Example from `trashcan_cc.bat`:

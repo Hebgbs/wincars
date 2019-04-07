@@ -32,6 +32,8 @@ ECHO This script will install assets for %car_cc% as a Clockwork car.
 ECHO This is a file specific for this vehicle, but can be modified for
 ECHO use with other vehicles should you view its contents for modification.
 ECHO.
+ECHo Batch script and modified graphics by ElectricBee / E-Bee.
+ECHO.
 ECHO To continue, press any key.
 PAUSE > NUL
 REM | -------------------------------------------
